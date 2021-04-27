@@ -8,9 +8,10 @@ function handleRequest(req,res){
     });
 
     req.on('end', () => {
-       console.log(store)
+       res.write(store);
+       res.end();
     })
-    res.write(store);
+ 
 }
 
 server.listen(3456,() => {
