@@ -7,19 +7,19 @@ var server = http.createServer(handleRequest);
 function handleRequest(req,res){
     var dataFormat = req.headers('Content-Type')
     let store = '';
-   req.on('data', (chunk) => {
+    req.on('data', (chunk) => {
        store = store + chunk;
    })
 
     req.on('end', () => {
-        if(dataFormat === 'application/JSON'){
+        if(dataFormat === 'application/json'){
          var parsedData = JSON.parse(store);
          res.end(store);
         }
 
         if(dataFormat === 'application/x-www-form-urlencoded'){
             var parsedData = qs.parse(store)
-            res.end(parsedData);
+            res.end(JSON.stringify(parsedData));
         }
     })
 
