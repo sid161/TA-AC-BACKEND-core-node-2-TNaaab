@@ -1,6 +1,8 @@
-// ./server.js
-// ./app.js
-//var path = require('path');
+// __server.js // absolute path
+// __dirname + "./app.js" // absolute path
+// "./index.js" // relative path
+// var path = require('path')
+// path.join(__dirname, 'index.html')
 
 var http = require('http');
 var server = http.createServer(handleRequest)
