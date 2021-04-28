@@ -1,5 +1,4 @@
-// var relativePath = "./"
-
-// var absolutePath = __client
-// var filePath = path.join(__client, index.js);
+ var relativePath = "../client/index.js"
+ var Path = require('path');
+ var absPath = path.join(__dirname, '..', 'client/index.js')
 
